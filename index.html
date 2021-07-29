@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STOP WATCH</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <h1 id="firsttitle">Stop Watch</h1>
+  </head>
+  <body>
+    <section>
+        <div class="container col-12">
+    
+      <div>
+        <span class="hrs">00</span>
+        <span class="min">: 00</span>
+        <span class="sec">: 00</span>
+      </div>
+    </section>
+
+    <section>
+    <div class="row">
+      <button onclick="start()" id="start" type="button" class="btn btn-light">
+        Start
+      </button>
+      <button onclick="pause()" id="pause" type="button" class="btn btn-light">
+        Pause
+      </button>
+      <button onclick="reset()" id="reset" type="button" class="btn btn-light">
+        Reset
+      </button>
+    </section>
+</div>
+</div>
+  </body>
+
+  <script>
+    var hr = 0;
+    var min = 0;
+    var sec = 0;
+    var t;
+    function startTime() {
+      if (sec < 59) {
+        sec++;
+        document.querySelector(".sec").innerHTML = print(sec);
+      } else {
+        sec = 0;
+        min++;
+        document.querySelector(".sec").innerHTML = print(sec);
+      }
+      if (min < 59) {
+        document.querySelector(".min").innerHTML = print(min);
+      } else {
+        min = 0;
+        hr++;
+        document.querySelector(".hrs").innerHTML = print(min);
+      }
+      if (hr < 24) {
+        document.querySelector(".hrs").innerHTML = print(hrs);
+      } else {
+        stop();
+      }
+    }
+    function print(val) {
+      if (val <= 9) {
+        return "0" + val;
+      } else {
+        return val;
+      }
+    }
+    function start() {
+      t = setInterval(startTime, 100);
+      document.getElementById("start").disabled = true;
+    }
+    function pause() {
+      clearInterval(t);
+      document.getElementById("start").disabled = false;
+    }
+    function reset() {
+      clearInterval(t);
+      min = 0;
+      sec = 0;
+      hr = 0;
+      document.querySelector(".sec").innerHTML = "00";
+      document.querySelector(".min").innerHTML = ":00";
+      document.querySelector(".hrs").innerHTML = ":00";
+    }
+  </script>
+</html>

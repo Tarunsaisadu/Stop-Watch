@@ -1,0 +1,30 @@
+body {
+  background-color: blueviolet;
+  color: cornsilk;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 200px;
+}
+
+.btn {
+  margin-left: 350px;
+  margin-top: 200px;
+  padding: 15px;
+}
+#settime {
+  margin-left: 200px;
+  margin-top: 200px;
+  padding: 35px;
+}
+.container {
+  margin: auto;
+  margin-top: 100px;
+  width: 50%;
+  border: 3px solid whitesmoke;
+  padding: 50px;
+  text-align: center;
+  font-size: 40px;
+  background-color: rgb(105, 152, 184);
+}
